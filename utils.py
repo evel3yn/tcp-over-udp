@@ -7,7 +7,7 @@ DEBUG = True
 # Extend the possible states based on your implementation
 # Refer TCP protocol
 class States(Enum):
-    CLOSED, LISTEN, SYN_RECEIVED, SYN_SENT, ESTABLISHED, FIN_RCVD, CLOSE_WAIT, LAST_ACK, FIN_WAIT_1, FIN_WAIT_2 = range(1, 8)
+    CLOSED, LISTEN, SYN_RECEIVED, SYN_SENT, ESTABLISHED, FIN_RCVD, CLOSE_WAIT, LAST_ACK, FIN_WAIT_1, FIN_WAIT_2 = range(1, 11)
 
 
 class Header:
