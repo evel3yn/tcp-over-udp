@@ -1,3 +1,6 @@
+# Name: Simin Wen
+# ID: wens3
+# Version: python 3
 from multiprocessing import Value
 from threading import Timer
 from utils import States
@@ -16,6 +19,7 @@ sock = socket.socket(socket.AF_INET,  # Internet
 
 def send_udp(message):
     sock.sendto(message, (UDP_IP, UDP_PORT))
+
 
 def recv_msg():
     data, addr = sock.recvfrom(1024)
@@ -47,7 +51,6 @@ class Client:
                 send_udp(header.bits())
                 self.update_state(States.ESTABLISHED)
 
-
     def terminate(self):
         while True:
             if self.client_state == States.ESTABLISHED:
@@ -69,8 +72,6 @@ class Client:
                     # wait for 2MSL
                     time.sleep(1)
                     self.update_state(States.CLOSED)
-
-
 
     def update_state(self, new_state):
         if utils.DEBUG:
@@ -114,8 +115,6 @@ class Client:
             p.join()
         # here you can update your client's instance variables.
         self.last_received_ack = lst_rec_ack_shared.value
-
-
 
 
 # we create a client, which establishes a connection

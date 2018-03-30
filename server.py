@@ -1,3 +1,7 @@
+# Name: Simin Wen
+# ID: wens3
+# Version: python 3
+
 import socket
 import utils
 from utils import States
@@ -89,4 +93,3 @@ while True:
         header, body, addr4 = recv_msg()
         if addr == addr4 and header.ack == 1 and header.ack_num == seq_number + 1 and header.seq_num == ack_number:
             update_server_state(States.CLOSED)
-
